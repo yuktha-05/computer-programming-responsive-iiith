@@ -221,7 +221,7 @@ window.view = {
 			this.codeExecutionWithColour();
 	 	if (this.currentSiblingElement.className === 'break redClass')
 			this.codeExecutionWithColourAndId('closeBrc1Id');
-		if (1 <= model.inputNumber && model.inputNumber <= 6) {
+		if (1 <= model.inputNumber && model.inputNumber <= 5) {
 	 		if (this.nextSiblingElement.id === 'holidayId')
 				this.codeExecutionWithColourAndId('elseIfId');
 	 		else if (this.nextSiblingElement.id === 'workingdayId') {
@@ -241,6 +241,13 @@ window.view = {
 	 		}
 	 	}
 	 	if (model.inputNumber === 7) {
+	 		if (this.nextSiblingElement.id === 'holidayId') {
+				this.codeExecutionWithColour();
+				this.changeOpacity('holidayImage');
+				this.setInnerHtml('outputDayId', 'HOLIDAY');
+	 		}
+	 	}
+	 	if (model.inputNumber === 6) {
 	 		if (this.nextSiblingElement.id === 'holidayId') {
 				this.codeExecutionWithColour();
 				this.changeOpacity('holidayImage');
