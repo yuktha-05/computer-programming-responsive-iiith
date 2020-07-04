@@ -81,10 +81,13 @@ window.view = {
 		inputValue = inputValue.replace(/\s/g, ',')
 		this.numbers = inputValue.split(',')
 	},
+
+	 
 	takeInputFromRadioBox: function() {
 		var element = document.getElementsByName('radio_group')
 		if ( element[0].checked )
 			this.generateRandomNumbers()
+		   	//this.document.getElementsByName('firstname').disabled=true
 		else if (element[1].checked)
 			this.getUserInput()
 	},
@@ -107,6 +110,21 @@ window.view = {
 	removeImage: function() {
 		var element = document.getElementsByTagName('img')
 		if ( element.length > 0 )
+			document.getElementById('sortingDiv').removeChild(element[0])
+	},
+	/* createImage: function(left,top) {
+		var image = document.createElement('img')
+		image.style.position = 'absolute'
+		image.style.left = left  + 'px'
+		image.style.top= top + 'px'
+		
+		image.style.opacity = '0.7'
+        image.className = 'arrowImage'
+		document.getElementById('sortingDiv').appendChild(image)
+	}, */
+	removeImage: function() {
+		var element = document.getElementsByTagName('img')
+		if ( element.length == 1)
 			document.getElementById('sortingDiv').removeChild(element[0])
 	},
 	createImage: function(left, top) {
