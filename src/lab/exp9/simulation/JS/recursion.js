@@ -26,18 +26,25 @@ window.view = {
 		 else if ( input > 5 || input % 1 !== 0 )
 			alert('Only integral value (Greater than equal to 1 and less than equal to 5) is accepted !')
 		 else {
-			this.disableElement('btnOk')
+		 	//this.disableElement('btnStart')//btnOk
+			//this.enableElement('btnOk')
+			this.disableElement('btnOk')//btnOk
+						
 			this.enableElement('btnStart')
 			this.disableElement('input')
 			this.changeClass('btnOk', 'buttonDisable okButton')
+			//this.changeClass('btnStart', 'buttonDisable startButton')
 			this.changeClass('btnStart', 'button startButton')
 			this.n = input
 			this.totalDisks = input
 			var elements = document.getElementById('1').childNodes
 			for ( i = 0 ; i < input ; i++ )
 				elements[i].className += ' ' + this.disks[i]
+
+
 		}
 	},
+
 	changeClass: function(id, className) {
 		document.getElementById(id).className = className
 	},
@@ -289,5 +296,11 @@ window.view = {
 	init: function() {
 		this.activateEvents()
 	}
+}
+function myfunc()
+{
+	 if ( input > 10 || input % 1 !== 0 )
+			alert('Only integral value (Greater than equal to 1 and less than equal to 10) is accepted !')
+		return false;
 }
 window.onload = function() { view.init() }																										
